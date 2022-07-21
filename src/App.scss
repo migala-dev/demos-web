@@ -76,10 +76,12 @@ body {
 }
 
 .button {
+  display: block;
   padding: 16px;
   border-radius: 6px;
   text-align: center;
   text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
   &.primary {
     background: #2b2d42;
