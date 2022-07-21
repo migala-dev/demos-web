@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import googlePlayBadge from 'assets/google-play-badge.png';
 import appStoreBadge from 'assets/app-store-badge.svg';
 
@@ -12,25 +14,26 @@ const HomePage = () => {
       <div className="actions-container">
         <div className="action-container">
           <label>Conoce nuestras:</label>
-          <div className="button primary">Politicas de privacidad</div>
+          <Link to="/privacidad" className="button primary">
+            Politicas de privacidad
+          </Link>
         </div>
 
         <div className="action-container">
           <label>Nuestro es codigo libre, encuentralo en:</label>
-          <div className="button primary">Repositorios</div>
+          <Link to="/repositorios" className="button primary">
+            Repositorios
+          </Link>
         </div>
       </div>
 
       <div className="actions-container">
         <div className="action-container">
           <label>Alguna:</label>
-          <div className="button primary">Queja y/o sugerencias</div>
+          <Link to="/comentarios" className="button primary">
+            Queja y/o sugerencias
+          </Link>
         </div>
-
-        <div className="action-container">
-          <label>Encuentranos en:</label>
-          <div className="button primary">Redes sociales</div>
-        </div> 
       </div>
     </>
   );
