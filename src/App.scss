@@ -79,7 +79,13 @@ html, body, #root {
   .action-container {
     flex: 1;
     max-width: 50%;
+    max-height: max-content;
     padding-right: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     label {
       font-size: 22px;
       font-weight: 200;
