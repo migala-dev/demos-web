@@ -17,11 +17,13 @@ const Layout = ({ children }) => {
     <div className="app-container">
       <div className="content-container">
         
-        {pathname !== '/' ? (
+        {pathname !== '/' && (
           <button onClick={handleBack} className="back-button">
-            <span className="material-icons-round back-button__icon">arrow_back</span>
+            <span className="material-icons-round back-button__icon">
+              arrow_back
+            </span>
           </button>
-        ) : null}
+        )}
 
         <img className="logo" src={logo} alt="logo"></img>
 
