@@ -5,7 +5,8 @@ import useFetch from 'hooks/useFetch';
 import cleanupRepositoryData from 'utils/cleanupRepositoryData';
 import githubMark from 'assets/GitHub-Mark-32px.png';
 
-const RepositoryCard = ({ repositoryURL }) => {
+const RepositoryCard = ({ repositoryName }) => {
+  const repositoryURL = `https://api.github.com/repos/AlexOrtegaZ/${repositoryName}`
   const { data = {}, loading, error } = useFetch(repositoryURL);
 
   const cleanedRepositoryData = useMemo(
@@ -15,7 +16,6 @@ const RepositoryCard = ({ repositoryURL }) => {
 
   const { 
     ownerAvatar, 
-    repositoryName, 
     ownerUser, 
     lastUpdate, 
     htmlURL, 
@@ -76,7 +76,7 @@ const RepositoryCard = ({ repositoryURL }) => {
 };
 
 RepositoryCard.propTypes = {
-  repositoryURL: PropTypes.string.isRequired
+  repositoryName: PropTypes.string.isRequired
 };
 
 export default RepositoryCard;

@@ -10,7 +10,7 @@ const RepositoriesPage = () => {
       {repositories[lista].map(({ name, repositoryName }) => (
         <RepositoryElement key={name} elementTitle={name}>
           <RepositoryCard 
-            repositoryURL={`https://api.github.com/repos/AlexOrtegaZ/${repositoryName}`}
+            repositoryName={repositoryName}
           />
         </RepositoryElement>
       ))}

@@ -1,9 +1,9 @@
 const repositories = {
-  app: [
+  'App': [
     { name: 'App', repositoryName: 'demos-app' }
   ],
 
-  backend: [
+  'Backend': [
     { name: 'Auth Service', repositoryName: 'demos-auth-service' },
     { name: 'Space Service', repositoryName: 'demos-space-service' },
     { name: 'Cache Service', repositoryName: 'demos-cache-service' },
@@ -11,7 +11,7 @@ const repositories = {
     { name: 'Websocket', repositoryName: 'demos-websocket' }
   ],
 
-  submodule: [
+  'Submodule': [
     { name: 'demos-shared', repositoryName: 'demos-shared' }
   ]
 };
