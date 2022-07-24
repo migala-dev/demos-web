@@ -1,8 +1,23 @@
-const getMonthsAgo = updatedAt => {
-  const updatedAtMonth = new Date(updatedAt).getMonth();
-  const currentMonth = new Date().getMonth();
+const MS_PER_MONTH = 2629743830;
 
-  return (currentMonth - updatedAtMonth) + 1;
+const getUTC = date => Date.UTC(
+  date.getFullYear(), 
+  date.getMonth(),
+  date.getDate()
+);
+
+const getMonthsAgo = updatedAt => {
+  const updatedAtDate = new Date(updatedAt);
+  const updatedAtUTC = getUTC(updatedAtDate);
+
+  const currentDate = new Date();
+  const currentUTC = getUTC(currentDate);
+
+  const diff = Math.abs(currentUTC - updatedAtUTC);
+
+  const monthsAgo = Math.round(diff / MS_PER_MONTH);
+
+  return monthsAgo;
 };
 
 const cleanupRepositoryData = (data = {}) => {
