@@ -10,47 +10,9 @@ const RepositoriesPage = () => {
       {/* Test list */}
       <RepositoryList listTitle="Backend">
 
-        <RepositoryElement elementTitle="Auth Service">
-          <RepositoryCard 
-            repositoryData={{
-              ownerAvatar: 'https://avatars.githubusercontent.com/u/27720520?v=4',
-              repositoryName: 'auth-service',
-              ownerUser: 'AlexOrtegaZ',
-              lastUpdate: '5'
-            }} 
-          />
-        </RepositoryElement>
-
         <RepositoryElement elementTitle="Space Service">
           <RepositoryCard 
-            repositoryData={{
-              ownerAvatar: 'https://avatars.githubusercontent.com/u/27720520?v=4',
-              repositoryName: 'space-service',
-              ownerUser: 'AlexOrtegaZ',
-              lastUpdate: '2'
-            }} 
-          />
-        </RepositoryElement>   
-
-        <RepositoryElement elementTitle="Space Service">
-          <RepositoryCard 
-            repositoryData={{
-              ownerAvatar: 'https://avatars.githubusercontent.com/u/27720520?v=4',
-              repositoryName: 'space-service',
-              ownerUser: 'AlexOrtegaZ',
-              lastUpdate: '2'
-            }} 
-          />
-        </RepositoryElement>
-      
-        <RepositoryElement elementTitle="Space Service">
-          <RepositoryCard 
-            repositoryData={{
-              ownerAvatar: 'https://avatars.githubusercontent.com/u/27720520?v=4',
-              repositoryName: 'space-service',
-              ownerUser: 'AlexOrtegaZ',
-              lastUpdate: '2'
-            }} 
+            repositoryURL="https://api.github.com/repos/AlexOrtegaZ/demos-space-service"
           />
         </RepositoryElement>
 

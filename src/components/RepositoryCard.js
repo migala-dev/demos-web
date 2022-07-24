@@ -1,13 +1,40 @@
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
+import useFetch from 'hooks/useFetch';
+import cleanupRepositoryData from 'utils/cleanupRepositoryData';
 import githubMark from 'assets/GitHub-Mark-32px.png';
 
-const RepositoryCard = ({ repositoryData }) => {
-  const { ownerAvatar, repositoryName, ownerUser, lastUpdate } = repositoryData;
+const RepositoryCard = ({ repositoryURL }) => {
+  const { data = {}, loading, error } = useFetch(repositoryURL);
 
+  const cleanedRepositoryData = useMemo(
+    () => cleanupRepositoryData(data), 
+    [data]
+  );
+
+  const { 
+    ownerAvatar, 
+    repositoryName, 
+    ownerUser, 
+    lastUpdate, 
+    htmlURL, 
+    message 
+  } = cleanedRepositoryData;
+
+  /* Temporal */
+  if (loading) {
+    return <span>Cargando repositorio...</span>;
+  }
+
+  /* Temporal */
+  if (error || message) {
+    return <span>Ocurrió un error al obtener el repositorio</span>;
+  }
+  
   return (
     <a
-      href="https://google.com"
+      href={htmlURL}
       rel="noreferrer"
       target="_blank"
       className="repository-card"
@@ -49,12 +76,7 @@ const RepositoryCard = ({ repositoryData }) => {
 };
 
 RepositoryCard.propTypes = {
-  repositoryData: PropTypes.exact({
-    ownerAvatar: PropTypes.string.isRequired,
-    repositoryName: PropTypes.string.isRequired,
-    ownerUser: PropTypes.string.isRequired,
-    lastUpdate: PropTypes.string.isRequired,
-  }).isRequired,
+  repositoryURL: PropTypes.string.isRequired
 };
 
 export default RepositoryCard;
