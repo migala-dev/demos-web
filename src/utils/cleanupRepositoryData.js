@@ -1,3 +1,10 @@
+const getMonthsAgo = updatedAt => {
+  const updatedAtMonth = new Date(updatedAt).getMonth();
+  const currentMonth = new Date().getMonth();
+
+  return (currentMonth - updatedAtMonth) + 1;
+};
+
 const cleanupRepositoryData = (data = {}) => {
   if (data === null) return {};
 
@@ -8,14 +15,16 @@ const cleanupRepositoryData = (data = {}) => {
   const { message } = data;
   if (message) return { message };
 
-  const { owner, updated_at, html_url } = data;
-  const { avatar_url, login} = owner;
+  const { owner, updated_at: updatedAt, html_url: htmlURL } = data;
+  const { avatar_url, login } = owner;
+
+  const monthsAgo = getMonthsAgo(updatedAt);
 
   return { 
     ownerAvatar: avatar_url, 
     ownerUser: login, 
-    lastUpdate: updated_at,
-    htmlURL: html_url
+    lastUpdate: monthsAgo,
+    htmlURL: htmlURL
   };
 };
 

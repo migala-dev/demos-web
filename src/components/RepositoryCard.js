@@ -6,21 +6,16 @@ import cleanupRepositoryData from 'utils/cleanupRepositoryData';
 import githubMark from 'assets/GitHub-Mark-32px.png';
 
 const RepositoryCard = ({ repositoryName }) => {
-  const repositoryURL = `https://api.github.com/repos/AlexOrtegaZ/${repositoryName}`
+  const repositoryURL = `https://api.github.com/repos/AlexOrtegaZ/${repositoryName}`;
   const { data = {}, loading, error } = useFetch(repositoryURL);
 
   const cleanedRepositoryData = useMemo(
-    () => cleanupRepositoryData(data), 
+    () => cleanupRepositoryData(data),
     [data]
   );
 
-  const { 
-    ownerAvatar, 
-    ownerUser, 
-    lastUpdate, 
-    htmlURL, 
-    message 
-  } = cleanedRepositoryData;
+  const { ownerAvatar, ownerUser, lastUpdate, htmlURL, message } =
+    cleanedRepositoryData;
 
   /* Temporal */
   if (loading) {
@@ -31,7 +26,7 @@ const RepositoryCard = ({ repositoryName }) => {
   if (error || message) {
     return <span>Ocurrió un error al obtener el repositorio</span>;
   }
-  
+
   return (
     <a
       href={htmlURL}
@@ -66,7 +61,9 @@ const RepositoryCard = ({ repositoryName }) => {
             <span className="repository-card__owner-user">{ownerUser}</span>
             <span className="repository-card__bullet">•</span>
             <span className="repository-card__last-update">
-              {`Updated at ${lastUpdate} months ago`}
+              {`Updated at ${lastUpdate} ${
+                lastUpdate === 1 ? 'month' : 'months'
+              } ago`}
             </span>
           </div>
         </div>
@@ -76,7 +73,7 @@ const RepositoryCard = ({ repositoryName }) => {
 };
 
 RepositoryCard.propTypes = {
-  repositoryName: PropTypes.string.isRequired
+  repositoryName: PropTypes.string.isRequired,
 };
 
 export default RepositoryCard;
