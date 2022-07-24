@@ -1,17 +1,9 @@
-html, body, #root {
-  width: 100%;
-  height: 100%;
+@use 'base';
 
-  box-sizing: border-box;
+@use 'layout';
 
-  overflow: hidden;
-}
+@use 'components';
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-}
 
 .app-container {
   width: 100%;
@@ -22,7 +14,7 @@ html, body, #root {
   display: flex;
   align-items: flex-start;
   background-color: #edf2f4;
-  background-image: url("./assets/paint-1.jpeg");
+  background-image: url("../assets/paint-1.jpeg");
   background-position: center;
   overflow: hidden;
   .sidebar-container {

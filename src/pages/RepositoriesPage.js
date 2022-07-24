@@ -13,10 +13,43 @@ const RepositoriesPage = () => {
         <RepositoryElement elementTitle="Auth Service">
           <RepositoryCard 
             repositoryData={{
-              ownerAvatar: 'https://avatars.githubusercontent.com/u/47933710?v=4',
+              ownerAvatar: 'https://avatars.githubusercontent.com/u/27720520?v=4',
               repositoryName: 'auth-service',
-              ownerUser: 'YaelBadillo',
+              ownerUser: 'AlexOrtegaZ',
               lastUpdate: '5'
+            }} 
+          />
+        </RepositoryElement>
+
+        <RepositoryElement elementTitle="Space Service">
+          <RepositoryCard 
+            repositoryData={{
+              ownerAvatar: 'https://avatars.githubusercontent.com/u/27720520?v=4',
+              repositoryName: 'space-service',
+              ownerUser: 'AlexOrtegaZ',
+              lastUpdate: '2'
+            }} 
+          />
+        </RepositoryElement>   
+
+        <RepositoryElement elementTitle="Space Service">
+          <RepositoryCard 
+            repositoryData={{
+              ownerAvatar: 'https://avatars.githubusercontent.com/u/27720520?v=4',
+              repositoryName: 'space-service',
+              ownerUser: 'AlexOrtegaZ',
+              lastUpdate: '2'
+            }} 
+          />
+        </RepositoryElement>
+      
+        <RepositoryElement elementTitle="Space Service">
+          <RepositoryCard 
+            repositoryData={{
+              ownerAvatar: 'https://avatars.githubusercontent.com/u/27720520?v=4',
+              repositoryName: 'space-service',
+              ownerUser: 'AlexOrtegaZ',
+              lastUpdate: '2'
             }} 
           />
         </RepositoryElement>

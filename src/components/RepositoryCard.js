@@ -35,7 +35,7 @@ const RepositoryCard = ({ repositoryData }) => {
           <span className="repository-card__repository-name">
             {repositoryName}
           </span>
-          <div className="repository-card__repo-info-wrapper">
+          <div className="repository-card__repository-info-wrapper">
             <span className="repository-card__owner-user">{ownerUser}</span>
             <span className="repository-card__bullet">•</span>
             <span className="repository-card__last-update">
