@@ -25,7 +25,9 @@ const Layout = ({ children }) => {
           </button>
         )}
 
-        <img className="logo" src={logo} alt="logo"></img>
+        <div className="logo-container">
+          <img className="logo" src={logo} alt="logo"></img>
+        </div>
 
         {children}
 

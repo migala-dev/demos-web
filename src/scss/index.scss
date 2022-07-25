@@ -53,12 +53,33 @@
       width: 100%;
     }
 
-    .logo {
+    .logo-container {
       width: 60%;
+      max-width: 600px;
+      min-width: 450px;
+
+
       position: relative;
       left: -30px;
+
+      @include breakpoint-down('small') {
+        min-width: 350px;
+        margin: 0 auto;
+        left: 0;
+      }
+
+      @include breakpoint-down('399px') {
+        width: 60%;
+        min-width: 0;
+      } 
+    }
+
+    .logo {
+      max-width: 100%;
+      height: auto;
     }
   }
+
   .person-with-phone {
     height: 60vh;
     animation: balance 20s ease-in-out 110ms 1 alternate;
@@ -81,17 +102,40 @@
   }
 
   .stores-badges {
-    display: grid;
-    grid-template-columns: 200px 162px;
-    align-items: center;
-    margin-left: 18px;
     margin-bottom: 12px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
     position: relative;
     top: -44px;
-    .badge {
-      width: 100%;
-      cursor: pointer;
+    left: 18px;
+
+    @include breakpoint-down('small') {
+      justify-content: center;
+
+      top: -24px;
+      left: 0;
     }
+  }
+
+  .badge-container-google {
+    width: 200px;
+
+    @include breakpoint-down('small') {
+      width: 180px;
+    }
+  }
+
+  .badge-container-apple {
+    width: 162px;
+
+    @include breakpoint-down('small') {}
+  }
+
+  .badge {
+    width: 100%;
   }
 }
 
@@ -155,7 +199,6 @@
   display: flex;
   align-items: center;
 
-  //position: absolute;
   position: fixed;
   z-index: 1;
   top: 25px;
