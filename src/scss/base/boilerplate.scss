@@ -1,22 +1,4 @@
-/*
-html, body, #root {
-  width: 100%;
-  height: 100%;
-
-  box-sizing: border-box;
-
-  overflow: hidden;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-}
-*/
-
-$white: #fff;
-$black: #000;
+@use 'scss/abstracts/variables' as *;
 
 html {
   font-size: 100%;

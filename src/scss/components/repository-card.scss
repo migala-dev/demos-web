@@ -1,6 +1,4 @@
-$dark-gray: #37352f;
-$light-gray: #37352fa6;
-$white: #fff;
+@use 'scss/abstracts/variables' as *;
 
 .repository-card {
   background-color: $white;

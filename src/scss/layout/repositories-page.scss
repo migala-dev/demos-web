@@ -1,4 +1,4 @@
-$dark-gray: #37352f;
+@use 'scss/abstracts/variables' as *;
 
 .repositories-page {
   color: $dark-gray;
