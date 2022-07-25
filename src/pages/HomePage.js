@@ -25,9 +25,7 @@ const HomePage = () => {
             Repositorios
           </Link>
         </div>
-      </div>
 
-      <div className="actions-container">
         <div className="action-container">
           <label>Alguna:</label>
           <Link to="/comentarios" className="button primary">
