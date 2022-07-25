@@ -4,6 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import personWithPhone1 from "assets/person-with-phone-1.png";
 
+import backgroundImage from "assets/paint-2.jpeg";
+
 const Layout = ({ children }) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ const Layout = ({ children }) => {
   const isInHome = pathname === "/";
 
   return (
-    <div className="app-container">
+    <div className="app-container" style={{ backgroundImage: `url(${backgroundImage})`}}>
       <div className="content-container">
         {!isInHome && (
           <div>

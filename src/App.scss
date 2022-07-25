@@ -24,8 +24,8 @@ body,
   display: flex;
   align-items: flex-start;
   background-color: #edf2f4;
-  background-image: url("./assets/paint-1.jpeg");
   background-position: center;
+  background-size: cover;
   overflow: hidden;
   .content-container {
     max-height: 100%;
