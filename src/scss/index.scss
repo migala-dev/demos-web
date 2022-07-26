@@ -72,8 +72,7 @@
 
       @include breakpoint-down('small') {
         min-width: 350px;
-        margin: 0 auto;
-        left: 0;
+        left: -15px;
       }
 
       @include breakpoint-down('399px') {
@@ -121,10 +120,8 @@
     left: 18px;
 
     @include breakpoint-down('small') {
-      justify-content: center;
-
       top: -24px;
-      left: 0;
+      left: 7px;
     }
   }
 
@@ -139,7 +136,10 @@
   .badge-container-apple {
     width: 162px;
 
-    @include breakpoint-down('small') {}
+    @include breakpoint-down('small') {
+      width: 142px;
+      
+    }
   }
 
   .badge {
