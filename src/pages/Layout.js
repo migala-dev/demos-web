@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import personWithPhone1 from "assets/person-with-phone-1.png";
+import personWithPhone1 from 'assets/person-with-phone-1.png';
 
-import backgroundImage from "assets/paint-2.jpeg";
+import backgroundImage from 'assets/paint-2.jpeg';
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation();
@@ -14,10 +14,13 @@ const Layout = ({ children }) => {
     navigate(-1);
   };
 
-  const isInHome = pathname === "/";
+  const isInHome = pathname === '/';
 
   return (
-    <div className="app-container" style={{ backgroundImage: `url(${backgroundImage})`}}>
+    <div
+      className="app-container"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="content-container">
         {!isInHome && (
           <div>
@@ -29,11 +32,13 @@ const Layout = ({ children }) => {
         {children}
       </div>
 
-     {isInHome && <img
-        className="person-with-phone"
-        src={personWithPhone1}
-        alt="person-with-phone"
-      ></img>}
+      {isInHome && (
+        <img
+          className="person-with-phone"
+          src={personWithPhone1}
+          alt="person-with-phone"
+        />
+      )}
     </div>
   );
 };
