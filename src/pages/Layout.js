@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import logo from 'assets/demos-logo.png';
 import personWithPhone1 from 'assets/person-with-phone-1.png';
+
+import backgroundImage from 'assets/paint-2.jpeg';
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation();
@@ -13,37 +14,37 @@ const Layout = ({ children }) => {
     navigate(-1);
   };
 
+  const isInHome = pathname === '/';
+
   return (
-    <div className="app-container">
+    <div
+      className="app-container"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="content-container">
-        
-        {pathname !== '/' && (
-          <button onClick={handleBack} className="back-button">
-            <span className="material-icons-round back-button__icon">
-              arrow_back
+        {!isInHome && (
+          <div>
+            <span onClick={handleBack} className="back-link">
+              Ir a página de inicio
             </span>
-          </button>
+          </div>
         )}
-
-        <img className="logo" src={logo} alt="logo"></img>
-
         {children}
-
       </div>
-      
-      <div className="person-with-phone-wrapper">
+
+      {isInHome && (
         <img
           className="person-with-phone"
           src={personWithPhone1}
           alt="person-with-phone"
-        ></img>
-      </div>
+        />
+      )}
     </div>
   );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default Layout;

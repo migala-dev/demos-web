@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import googlePlayBadge from 'assets/google-play-badge.png';
-import appStoreBadge from 'assets/app-store-badge.svg';
+import googlePlayBadge from "assets/google-play-badge.png";
+import appStoreBadge from "assets/app-store-badge.svg";
+import logo from "assets/demos-logo.png";
 
 const HomePage = () => {
   return (
     <>
+      <img className="logo" src={logo} alt="logo"></img>
       <div className="stores-badges">
         <img className="badge" src={googlePlayBadge} alt="google-play"></img>
         <img className="badge" src={appStoreBadge} alt="app-store"></img>
