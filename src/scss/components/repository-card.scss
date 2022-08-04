@@ -1,6 +1,5 @@
-$dark-gray: #37352f;
-$light-gray: #37352fa6;
-$white: #fff;
+@use 'scss/abstracts/variables' as *;
+@use 'scss/abstracts/mixins' as *;
 
 .repository-card {
   background-color: $white;
@@ -9,6 +8,8 @@ $white: #fff;
   width: 100%;
 
   text-decoration: none;
+
+  border-radius: 3px;
 
   display: block;
 
@@ -30,6 +31,8 @@ $white: #fff;
     align-items: center;
     -moz-column-gap: 8px;
     column-gap: 8px;
+
+    overflow: hidden;
 
     &:hover {
       background-color: rgba(55, 53, 47, 0.08);
@@ -63,6 +66,11 @@ $white: #fff;
     z-index: 0;
 
     overflow: hidden;
+
+    @include breakpoint-down('small') {
+      width: 38px;
+      height: 38px;
+    }
   }
 
   &__owner-avatar {
@@ -85,6 +93,11 @@ $white: #fff;
     z-index: 1;
     bottom: -1px;
     right: -1px;
+
+    @include breakpoint-down('small') {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &__github-mark {
@@ -99,6 +112,10 @@ $white: #fff;
     font-size: 14px; 
     font-weight: 500;
     line-height: 1.5;
+
+    @include breakpoint-down('small') {
+      font-size: 16px;
+    }
   }
 
   &__repository-info-wrapper {
@@ -111,5 +128,9 @@ $white: #fff;
     display: flex;
     -moz-column-gap: 3px;
     column-gap: 3px;
+
+    @include breakpoint-down('small') {
+      font-size: 14px;
+    } 
   }
 }

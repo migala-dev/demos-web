@@ -9,8 +9,12 @@ const HomePage = () => {
     <>
       <img className="logo" src={logo} alt="logo"></img>
       <div className="stores-badges">
-        <img className="badge" src={googlePlayBadge} alt="google-play"></img>
-        <img className="badge" src={appStoreBadge} alt="app-store"></img>
+        <div className="badge-container badge-container-google">
+          <img className="badge" src={googlePlayBadge} alt="google-play"></img>
+        </div>
+        <div className="badge-container badge-container-apple">
+          <img className="badge" src={appStoreBadge} alt="app-store"></img>
+        </div>
       </div>
 
       <div className="actions-container">
@@ -27,9 +31,7 @@ const HomePage = () => {
             Repositorios
           </Link>
         </div>
-      </div>
 
-      <div className="actions-container">
         <div className="action-container">
           <label>Alguna:</label>
           <Link to="/comentarios" className="button primary">

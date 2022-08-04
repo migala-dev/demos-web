@@ -1,4 +1,5 @@
-$dark-gray: #37352f;
+@use 'scss/abstracts/variables' as *;
+@use 'scss/abstracts/mixins' as *;
 
 .repositories-page {
   color: $dark-gray;
@@ -9,5 +10,9 @@ $dark-gray: #37352f;
     font-size: 48px;
     font-weight: 700;
     line-height: 2;
+
+    @include breakpoint-down('small') {
+      font-size: 42px;
+    }
   }
 }
